@@ -1,0 +1,135 @@
+/* Styling for the footer section */
+.footer {
+    width: 100vw;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px 20px 20px;
+    font-size: 1rem;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Styling for footer contact information */
+.footer-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-contact p {
+    margin: 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-contact a {
+    color: #f4b41a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Styling for footer social media links */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-social a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #f4b41a;
+    border-radius: 25px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-social a:hover {
+    background-color: #f4b41a;
+    color: #222;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(244, 180, 26, 0.3);
+}
+
+/* Styling for copyright text */
+.footer p:last-child {
+    margin: 10px 0 0 0;
+    font-size: 0.9rem;
+    color: #ccc;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+}
+
+/* Responsive adjustments for smaller screens (max-width 600px) */
+@media (max-width: 600px) {
+    /* Adjust footer styling for smaller screens */
+    .footer {
+        font-size: 0.9rem;
+        padding: 25px 15px 15px 15px;
+        gap: 15px;
+    }
+    
+    /* Stack contact info vertically on mobile */
+    .footer-contact {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-contact p {
+        font-size: 0.9rem;
+    }
+    
+    /* Adjust social media buttons for mobile */
+    .footer-social {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .footer-social a {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+        width: 200px;
+        text-align: center;
+        border-radius: 20px;
+    }
+    
+    /* Adjust copyright text for mobile */
+    .footer p:last-child {
+        font-size: 0.8rem;
+        padding-top: 12px;
+    }
+}
+
+/* Additional responsive adjustments for very small screens (max-width 400px) */
+@media (max-width: 400px) {
+    .footer {
+        padding: 20px 10px 10px 10px;
+    }
+    
+    .footer-contact p {
+        font-size: 0.85rem;
+    }
+    
+    .footer-social a {
+        width: 180px;
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+}

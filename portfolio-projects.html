@@ -1,0 +1,445 @@
+<!-- filepath: c:\xampp\htdocs\Atrium_Interiors\html_files\portfolio-projects.html -->
+<!-- Document type declaration -->
+<!DOCTYPE html>
+<!-- Root HTML element with language set to English -->
+<html lang="en">
+<!-- Head section containing metadata and links -->
+<head>
+    <!-- Character set declaration -->
+    <meta charset="UTF-8">
+    <!-- Viewport configuration for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../media_files/logo.png">
+    <!-- Document title -->
+    <title>Portfolio/Projects</title>
+    <!-- Link to the main stylesheet -->
+    <link rel="stylesheet" href="../css_files/main.css">
+    <!-- Link to the portfolio page specific stylesheet -->
+    <link rel="stylesheet" href="../css_files/portfolio.css">
+</head>
+<!-- Body of the HTML document -->
+<body>
+    <!-- Header section containing the navigation bar -->
+    <header>
+        <!-- Navigation bar -->
+        <nav>
+            <!-- Navigation menu list -->
+            <ul id="navMenu">
+                <!-- Navigation item: Home (visible on smaller screens) -->
+                <li class="nav-home"><a href="index.html">Home</a></li>
+                <!-- Navigation item: About Us -->
+                <li><a href="about-us.html">About Us</a></li>
+                <!-- Navigation item: Services -->
+                <li><a href="services.html">Services</a></li>
+                <!-- Navigation item: Portfolio/Projects -->
+                <li><a href="portfolio-projects.html">Portfolio/Projects</a></li>
+                <!-- Navigation item: Contact -->
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+            <!-- Navigation logo linked to homepage -->
+            <a href="index.html" class="nav-logo" aria-label="Toggle navigation menu">
+                 <!-- Logo image -->
+                 <img src="../media_files/logo.png" alt="Atrium Interiors Logo">
+            </a>
+        </nav>
+    </header>
+  
+    <!-- Main gallery container -->
+    <div class="gallery">
+      <!-- Main heading for the gallery -->
+      <h2 class="gallery-heading">Gallery</h2>
+      <!-- Subheading for the gallery -->
+      <p class="gallery-subheading">
+        Explore our portfolio of completed projects, showcasing our expertise in interior design and renovation. From residential to commercial spaces, we bring your vision to life with creativity and precision.
+      </p>
+      <!-- Grid container for gallery items -->
+      <div class="gallery-grid">
+        <!-- Gallery item 1 -->
+        <div class="gallery-item">
+          <!-- Gallery thumbnail image -->
+          <img class="gallery-thumb" src="../media_files/Thecorner.JPG" alt="Gallery Image 1" onclick="openLightbox(this.src)" />
+          <!-- Caption for the gallery item -->
+          <div class="gallery-caption">
+            <!-- Title within the caption -->
+            <span class="caption-title">The Corner</span>
+            <!-- Location within the caption -->
+            <span class="caption-location">Dubai, UAE</span>
+          </div>
+        </div>
+        <!-- Gallery item 2 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/Thecorner2.JPG" alt="Gallery Image 2" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">The Corner</span>
+            <span class="caption-location">Dubai, UAE</span>
+          </div>
+        </div>
+        <!-- Gallery item 3 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/BaB.JPG" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Build a Bear</span>
+            <span class="caption-location">DCC</span>
+          </div>
+        </div>
+        <!-- Gallery item 4 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/BaB2.JPG" alt="Gallery Image 4" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Build a Bear</span>
+            <span class="caption-location">DCC</span>
+          </div>
+        </div>
+        <!-- Gallery item 5 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/BaB3.JPG" alt="Gallery Image 5" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Build a Bear</span>
+            <span class="caption-location">DCC</span>
+          </div>
+        </div>
+        <!-- Sub-subheading for gallery section -->
+        <h1 class="gallery-subsub">A curated selection</h1>
+        <!-- Gallery item 6 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/D&.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">D& Office</span>
+            <span class="caption-location">Shk Zayed Road</span>
+          </div>
+        </div>
+        <!-- Gallery item 7 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/D&2.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">D& Office</span>
+            <span class="caption-location">Shk Zayed Road</span>
+          </div>
+        </div>
+        <!-- Gallery item 8 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/D&3.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">D& Office</span>
+            <span class="caption-location">Shk Zayed Road</span>
+          </div>
+        </div>
+        <!-- Gallery item 9 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/vans.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Vans</span>
+            <span class="caption-location">Al Ghurair</span>
+          </div>
+        </div>
+        <!-- Gallery item 10 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/vans2.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Vans</span>
+            <span class="caption-location">Al Ghurair</span>
+          </div>
+        </div>
+        <!-- Sub-subheading for gallery section -->
+        <h1 class="gallery-subsub">of the interior</h1>
+        <!-- Gallery item 11 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/vans3.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Vans</span>
+            <span class="caption-location">Al Ghurair</span>
+          </div>
+        </div>
+        <!-- Gallery item 12 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/vans4.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Vans</span>
+            <span class="caption-location">Al Ghurair</span>
+          </div>
+        </div>
+        <!-- Gallery item 13 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/vans5.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Vans</span>
+            <span class="caption-location">Al Ghurair</span>
+          </div>
+        </div>
+        <!-- Gallery item 14 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/K.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">K-Beauty</span>
+            <span class="caption-location">Burjuman</span>
+          </div>
+        </div>
+        <!-- Sub-subheading for gallery section -->
+        <h1 class="gallery-subsub">design projects</h1>
+        <!-- Gallery item 15 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/K2.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">K-Beauty</span>
+            <span class="caption-location">Burjuman</span>
+          </div>
+        </div>
+        <!-- Gallery item 16 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/ill.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">ILLEYEN</span>
+            <span class="caption-location">DFC</span>
+          </div>
+        </div>
+        <!-- Gallery item 17 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/ill2.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">ILLEYEN</span>
+            <span class="caption-location">DFC</span>
+          </div>
+        </div>
+        <!-- Gallery item 18 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/ill3.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">ILLEYEN</span>
+            <span class="caption-location">DFC</span>
+          </div>
+        </div>
+        <!-- Gallery item 19 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/Jang.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Jjang Jjang Korean Restaurant</span>
+            <span class="caption-location">Reef Mall</span>
+          </div>
+        </div>
+        <!-- Sub-subheading for gallery section -->
+        <h1 class="gallery-subsub">blending aesthetics</h1>
+        <!-- Gallery item 20 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/Jang2.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Jjang Jjang Korean Restaurant</span>
+            <span class="caption-location">Reef Mall</span>
+          </div>
+        </div>
+        <!-- Gallery item 21 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/Jang3.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Jjang Jjang Korean Restaurant</span>
+            <span class="caption-location">Reef Mall</span>
+          </div>
+        </div>
+        <!-- Gallery item 22 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/Jang4.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Jjang Jjang Korean Restaurant</span>
+            <span class="caption-location">Reef Mall</span>
+          </div>
+        </div>
+        <!-- Gallery item 23 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/Jang5.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Jjang Jjang Korean Restaurant</span>
+            <span class="caption-location">Reef Mall</span>
+          </div>
+        </div>
+        <!-- Gallery item 24 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/Jang6.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Jjang Jjang Korean Restaurant</span>
+            <span class="caption-location">Reef Mall</span>
+          </div>
+        </div>
+        <!-- Gallery item 25 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/Stay.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Stay and Play</span>
+            <span class="caption-location">DFC</span>
+          </div>
+        </div>
+        <!-- Sub-subheading for gallery section -->
+        <h1 class="gallery-subsub">and functionality</h1>
+        <!-- Gallery item 26 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/Stay2.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Stay and Play</span>
+            <span class="caption-location">DFC</span>
+          </div>
+        </div>
+        <!-- Gallery item 27 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/stay3.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Stay and Play</span>
+            <span class="caption-location">DFC</span>
+          </div>
+        </div>
+        <!-- Gallery item 28 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/soha.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Soha</span>
+            <span class="caption-location">Burjuman</span>
+          </div>
+        </div>
+        <!-- Gallery item 29 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/soha2.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Soha</span>
+            <span class="caption-location">Burjuman</span>
+          </div>
+        </div>
+        <!-- Gallery item 30 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/soha3.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Soha</span>
+            <span class="caption-location">Burjuman</span>
+          </div>
+        </div>
+        <!-- Gallery item 31 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/soha4.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Soha</span>
+            <span class="caption-location">Burjuman</span>
+          </div>
+        </div>
+        <!-- Gallery item 32 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/soha5.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Soha</span>
+            <span class="caption-location">Burjuman</span>
+          </div>
+        </div>
+        <!-- Gallery item 33 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/batta.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Batta</span>
+            <span class="caption-location">DFC</span>
+          </div>
+        </div>
+        <!-- Gallery item 34 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/batta2.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Batta</span>
+            <span class="caption-location">DFC</span>
+          </div>
+        </div>
+        <!-- Sub-subheading for gallery section -->
+        <h1 class="gallery-subsub">to transform spaces </h1>
+        <!-- Gallery item 35 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/batta3.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Batta</span>
+            <span class="caption-location">DFC</span>
+          </div>
+        </div>
+        <!-- Sub-subheading for gallery section (larger font) -->
+        <h1 class="gallery-subsub3">into</h1>
+        <!-- Sub-subheading for gallery section (larger font) -->
+        <h1 class="gallery-subsub3">meaningful</h1>
+        <!-- Sub-subheading for gallery section (larger font) -->
+        <h1 class="gallery-subsub3">experiences.</h1>
+        <!-- Gallery item 36 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/Villa.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Villa interior</span>
+            <span class="caption-location">Umm Al Quwain</span>
+          </div>
+        </div>
+        <!-- Gallery item 37 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/Villa2.jpg" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Villa interior</span>
+            <span class="caption-location">Umm Al Quwain</span>
+          </div>
+        </div>
+        <!-- Gallery item 38 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/Villa3.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Villa interior</span>
+            <span class="caption-location">Umm Al Quwain</span>
+          </div>
+        </div>
+        <!-- Gallery item 39 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/villa1_1.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Villa interior</span>
+            <span class="caption-location">Dubai, UAE</span>
+          </div>
+        </div>
+        <!-- Gallery item 40 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/villa1_2.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Villa interior</span>
+            <span class="caption-location">Dubai, UAE</span>
+          </div>
+        </div>
+        <!-- Gallery item 41 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/villa1_3.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Villa interior</span>
+            <span class="caption-location">Dubai, UAE</span>
+          </div>
+        </div>
+        <!-- Gallery item 42 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/centara.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Build a Bear Concept Hotel Room</span>
+            <span class="caption-location">Centara Hotel</span>
+          </div>
+        </div>
+        <!-- Gallery item 43 -->
+        <div class="gallery-item">
+          <img class="gallery-thumb" src="../media_files/centara1.JPG" alt="Gallery Image 6" onclick="openLightbox(this.src)" />
+          <div class="gallery-caption">
+            <span class="caption-title">Build a Bear Concept Hotel Room</span>
+            <span class="caption-location">Centara Hotel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer section -->
+     <footer class="footer">
+        <!-- Contact information -->
+        <div class="footer-contact">
+            <p><strong>Email:</strong> <a href="mailto:info@atriuminteriors.ae">info@atriuminteriors.ae</a></p>
+            <p><strong>Mobile:</strong> <a href="tel:+971501234567">+971 50 123 4567</a></p>
+        </div>
+        <!-- Social media links -->
+        <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=100087343688188" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">Facebook</a>
+            <a href="https://www.instagram.com/atriuminteriorsdxb" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">Instagram</a>
+        </div>
+        <!-- Copyright information -->
+        <p>&copy; 2023 Atrium Interiors. All rights reserved.</p>
+    </footer>
+    <!-- Script tag for main JavaScript file (module type) -->
+    <script type="module" src="../js_files/main.js"></script>
+</body>
+</html>

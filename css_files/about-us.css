@@ -1,0 +1,283 @@
+/* General body styles */
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Container for the main content of the about us page */
+.about-us-content { 
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Styling for sections within the about-us-content */
+.about-us-content section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Remove border from the last section to avoid double borders */
+.about-us-content section:last-child {
+    border-bottom: none;
+}
+
+/* Styling for h2 and h3 headings */
+.about-us-content h2,
+.about-us-content h3 {
+    color: #000000;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f4b41a;
+    font-weight: 600;
+}
+
+/* Specific styling for h2 headings */
+.about-us-content h2 {
+    font-size: 2.2em;
+    text-align: center;
+}
+
+/* Specific styling for h3 headings */
+.about-us-content h3 {
+    font-size: 1.8em;
+}
+
+/* Paragraph styling */
+.about-us-content p {   
+    font-size: 1em;
+    color: #333333;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Styling for strong (bold) text */
+.about-us-content strong {
+    color: #000000;
+}
+
+/* Section specific to the founder's information, using flexbox for layout */
+.founder-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 30px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fdfdfd;
+    border-radius: 5px;
+    border-left: 5px solid #f4b41a;
+}
+
+/* Container for the founder's image, responsive with flex properties */
+.founder-image {
+    flex: 1 1 200px;
+    max-width: 250px;
+}
+
+/* Styling for the founder's image itself, ensuring it's responsive and styled */
+.founder-image img { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #f4b41a;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Placeholder for an image if not available, providing visual feedback */
+.about-image-placeholder { 
+    width: 100%;
+    min-height: 200px;
+    background-color: #e9ecef;
+    border: 2px dashed #f4b41a;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.9em;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Container for founder's biographical information, allowing more space with flex */
+.founder-info {
+    flex: 2 1 400px;
+}
+
+/* Paragraphs within the founder info section, with slightly larger font for readability */
+.founder-info p {
+    font-size: 1.05em;
+}
+
+/* Styling for quotes within the objectives section, including an accent border and background */
+.objectives .quote {
+    font-style: italic;
+    color: #000000;
+    margin-top: 15px;
+    padding: 15px 20px 15px 30px;
+    border-left: 4px solid #f4b41a;
+    background-color: #f9f9f9;
+    border-radius: 0 5px 5px 0;
+    position: relative;
+}
+
+/* Styling for the quotation mark pseudo-element, adding a large decorative quote */
+.objectives .quote::before {
+    content: '“';
+    font-family: Georgia, serif;
+    font-size: 3em;
+    color: #f4b41a;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    line-height: 1;
+}
+
+
+/* Styling for paragraphs in the location section, with larger and bolder text */
+.location p {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #000;
+}
+
+/* Placeholder for a map, defining its size and spacing */
+.map-placeholder { 
+    width: 100%;
+    height: 300px;
+    margin-top: 15px;
+}
+
+/* Styling for unordered lists in the company values section, removing default list styles */
+.company-values ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Styling for list items in the company values section, with custom padding and separators */
+.company-values li {
+    padding: 8px 0 8px 25px;
+    position: relative;
+    font-size: 1em;
+    margin-bottom: 8px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+/* Remove border from the last list item in company values */
+.company-values li:last-child{
+    border-bottom: none;
+}
+
+/* Styling for the checkmark pseudo-element in company values list, adding a visual indicator */
+.company-values li::before {
+    content: '✔';
+    color: #f4b41a;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+}
+
+/* Responsive adjustments for tablets and smaller devices (max-width 768px) */
+@media (max-width: 768px) {
+    /* Hide the about us logo on smaller screens */
+    #aboutuslogo {
+        display: none;
+    }
+    /* Adjust margins for the main content area on smaller screens */
+    .about-us-content {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    /* Reduce h2 font size on smaller screens */
+    .about-us-content h2 {
+        font-size: 1.8em;
+    }
+    /* Reduce h3 font size on smaller screens */
+    .about-us-content h3 {
+        font-size: 1.5em;
+    }
+    /* Stack founder section items vertically and center them on smaller screens */
+    .founder-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    /* Adjust founder image size and spacing on smaller screens */
+    .founder-image {
+        max-width: 80%;
+        margin-bottom: 20px;
+        width: auto; 
+        height: auto; 
+    }
+    /* Adjust founder image display properties on smaller screens */
+    .founder-image img {
+        height: auto;
+        object-fit: initial;
+        width: 100%; 
+    }
+    /* Center align founder info text on smaller screens */
+    .founder-info {
+        text-align: center;
+    }
+    /* Adjust quote mark size and position on smaller screens */
+    .objectives .quote::before {
+        left: 5px; 
+        font-size: 2.5em;
+    }
+}
+
+/* Responsive adjustments for mobile phones (max-width 480px) */
+@media (max-width: 480px) {
+    /* Further reduce margins and padding for the main content on mobile */
+    .about-us-content {
+        margin: 10px;
+        padding: 10px;
+    }
+    /* Further reduce h2 font size on mobile */
+    .about-us-content h2 {
+        font-size: 1.6em;
+    }
+    /* Further reduce h3 font size on mobile */
+    .about-us-content h3 {
+        font-size: 1.3em;
+    }
+    /* Adjust font size for various text elements on mobile for better readability */
+    .about-us-content p, .founder-info p, .location p, .company-values li {
+        font-size: 0.95em;
+    }
+    /* Allow founder image to take full width on mobile */
+    .founder-image {
+        max-width: 100%;
+    }
+    /* Adjust quote padding on mobile */
+    .objectives .quote {
+        padding-left: 25px;
+    }
+    /* Further reduce quote mark size on mobile */
+    .objectives .quote::before {
+        font-size: 2em;
+    }
+}
+
+#aboutuslogo {
+    width: 150px;
+    height: 150px;
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: contain;
+    float: left;
+    margin-right: 15px;
+    margin-left: 10px;
+    margin-top: -180px;
+}

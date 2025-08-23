@@ -1,0 +1,153 @@
+/* Main container for the gallery */
+.gallery {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto 3rem auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Universal box-sizing and font for gallery elements */
+.gallery * {
+  font-family: 'Montserrat', sans-serif; 
+  box-sizing: border-box;
+}
+
+/* Styling for the main heading of the gallery */
+.gallery-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Styling for the subheading of the gallery */
+.gallery-subheading {
+  font-size: 1.1rem;
+  color: #888;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Styling for a secondary subheading in the gallery */
+.gallery-subsub {
+  font-size: 2.5rem;
+  color: #000000;
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+/* Styling for a tertiary subheading, larger font size */
+.gallery-subsub3 {
+  font-size: 3rem;
+  color: #000000;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+/* Grid layout for gallery items */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* Individual gallery item styling */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+
+/* Hover effect for gallery items */
+.gallery-item:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+}
+
+/* Thumbnail image styling within a gallery item */
+.gallery-thumb {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem 1rem 0 0;
+  transition: transform 0.3s;
+}
+
+/* Hover effect for gallery thumbnails */
+.gallery-item:hover .gallery-thumb {
+  transform: scale(1.04);
+}
+
+/* Caption overlay for gallery items */
+.gallery-caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0; top: 0;
+  background: rgba(40,40,40,0.55);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Show caption on gallery item hover */
+.gallery-item:hover .gallery-caption {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Styling for the title within the caption */
+.caption-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+/* Styling for the location text within the caption */
+.caption-location {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+/* Responsive adjustments for gallery on medium screens */
+@media (max-width: 900px) {
+  .gallery {
+    padding: 1rem 0.5rem;
+  }
+  .gallery-grid {
+    gap: 1.2rem;
+  }
+  .gallery-thumb {
+    height: 160px;
+  }
+}
+
+/* Responsive adjustments for gallery on small screens */
+@media (max-width: 600px) {
+  .gallery {
+    padding: 0.5rem 0.2rem;
+  }
+  .gallery-heading {
+    font-size: 1.5rem;
+  }
+  .gallery-thumb {
+    height: 120px;
+  }
+}
+
+
+

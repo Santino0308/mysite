@@ -1,0 +1,151 @@
+<!-- Document type declaration -->
+<!DOCTYPE html>
+<!-- Root HTML element with language set to English -->
+<html lang="en">
+<!-- Head section containing metadata and links -->
+<head>
+    <!-- Character set declaration -->
+    <meta charset="UTF-8">
+    <!-- Viewport configuration for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../media_files/logo.png">
+    <!-- Document title -->
+    <title>HomePage</title>
+    <!-- Link to the main stylesheet -->
+    <link rel="stylesheet" href="../css_files/main.css">
+</head>
+<!-- Body of the HTML document -->
+<body>
+    <!-- Header section containing the navigation bar -->
+    <header>
+        <!-- Navigation bar -->
+        <nav>
+            <!-- Navigation menu list -->
+            <ul id="navMenu">
+                <!-- Navigation item: Home (visible on smaller screens) -->
+                <li class="nav-home"><a href="index.html">Home</a></li>
+                <!-- Navigation item: About Us -->
+                <li><a href="about-us.html">About Us</a></li>
+                <!-- Navigation item: Services -->
+                <li><a href="services.html">Services</a></li>
+                <!-- Navigation item: Portfolio/Projects -->
+                <li><a href="portfolio-projects.html">Portfolio/Projects</a></li>
+                <!-- Navigation item: Contact -->
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+            <!-- Navigation logo linked to homepage -->
+            <a href="index.html" class="nav-logo" aria-label="Toggle navigation menu">
+                <!-- Logo image -->
+                <img src="../media_files/logo.png" alt="Atrium Interiors Logo">
+            </a>
+        </nav>
+    </header>
+
+    <!-- Section for greeting video background -->
+    <div class="greeting-video-section" style="position: relative; width: 100vw; height: 100vh; overflow: hidden;">
+      <!-- Background video element -->
+      <video id="greetingBgVideo" class="greeting-bg-video" autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100vw; min-height: 100%; width: auto; height: 100%; transform: translate(-50%, -50%); object-fit: cover; z-index: 1; filter: brightness(0.7) saturate(1.1); background: #000;"><source src="../media_files/bgvid.mov" type="video/mp4">Your browser does not support the video tag.</video>
+      <!-- Container for centering content on top of the video -->
+      <div class="center-container" style="position: relative; z-index: 2; height: 100%; display: flex; justify-content: center; align-items: center;">
+        <!-- Welcome section with heading and greeting -->
+        <div class="welcome-section">
+            <!-- Main welcome message -->
+            <h1 id="message1" class="fade-in">Welcome to <span class="rounded-underline">Atrium Interiors</span></h1>
+            <!-- Greeting message -->
+            <div id="greeting">Good Day!</div>
+        </div>
+      </div>
+    </div>
+   
+    <!-- Container for feature boxes -->
+    <div class="feature-boxes">
+        <!-- Feature box linking to About Us page -->
+        <div class="feature-box">
+            <a href="about-us.html" class="feature-link">
+                <!-- Image for Our Story feature box -->
+                <img src="../media_files/Team.jpg" alt="Elegant interior design representing Our Story" class="feature-box-img">
+                <!-- Heading for Our Story feature box -->
+                <h3>Our Story</h3>
+                <!-- Paragraph for Our Story feature box -->
+                <p>Discover the passion and expertise behind Atrium Interiors and meet the team dedicated to your vision.</p>
+            </a>
+        </div>
+        <!-- Feature box linking to Services page -->
+        <div class="feature-box">
+            <a href="services.html" class="feature-link">
+                <!-- Image for Our Services feature box -->
+                <img src="../media_files/service.png" alt="Blueprint and design tools representing Our Services" class="feature-box-img">
+                <!-- Heading for Our Services feature box -->
+                <h3>Our Services</h3>
+                <!-- Paragraph for Our Services feature box -->
+                <p>Explore our comprehensive range of interior design and contracting services tailored to your needs.</p>
+            </a>
+        </div>
+        <!-- Feature box linking to Portfolio page -->
+        <div class="feature-box">
+            <a href="portfolio-projects.html" class="feature-link">
+                <!-- Image for View Our Work feature box -->
+                <img src="../media_files/villa1_2.JPG" alt="Collection of beautiful interior projects representing Our Work" class="feature-box-img">
+                <!-- Heading for View Our Work feature box -->
+                <h3>View Our Work</h3>
+                <!-- Paragraph for View Our Work feature box -->
+                <p>Browse through our portfolio of stunning projects and find inspiration for your own space.</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Section for a small description or message -->
+    <div class="small-description">
+        <!-- Message element with background image and hover content -->
+        <h1 id="message2">
+            <!-- Background image for the message -->
+            <img src="../media_files/bgs2.jpg" alt="Atrium Experience" class="message2-img">
+            <!-- Content to be revealed on hover -->
+            <span class="card__content">For over 15 years of professional experience our attention to details which transforms the concept to reality has the greatest expression of comfort, styles and elegance.</span>
+        </h1>
+    </div>
+
+    <!-- Section about the CEO -->
+    <div class="ceo-section">
+        <!-- Container for the CEO's image -->
+        <div class="ceo-image">
+            <!-- CEO's image -->
+            <img src="../media_files/ceo.jpg" alt="CEO of Atrium Interiors">
+        </div>
+        <!-- Divider element in the CEO section -->
+        <div class="ceo-divider"></div>
+        <!-- Container for the CEO's quote and information -->
+        <div class="ceo-quote">
+            <!-- CEO's quote text -->
+            <div class="ceo-text">“At Atrium Interiors, we turn spaces into experiences. With a passion for design and a commitment to quality, we create interiors that are as functional as they are inspiring. Our goal is simple: to help people live and work beautifully.”</div>
+            <!-- CEO's name -->
+            <div class="ceo-name">Stan Lee Partosa</div>
+            <!-- CEO's role -->
+            <div class="ceo-role">CEO, Atrium Interiors</div>
+            <!-- Button linking to the About Us page -->
+            <a href="about-us.html" class="ceo-btn">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <!-- Contact information -->
+        <div class="footer-contact">
+            <p><strong>Email:</strong> <a href="mailto:info@atriuminteriors.ae">info@atriuminteriors.ae</a></p>
+            <p><strong>Mobile:</strong> <a href="tel:+971501234567">+971 50 123 4567</a></p>
+        </div>
+        <!-- Social media links -->
+        <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=100087343688188" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">Facebook</a>
+            <a href="https://www.instagram.com/atriuminteriorsdxb" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">Instagram</a>
+        </div>
+        <!-- Copyright information -->
+        <p>&copy; 2023 Atrium Interiors. All rights reserved.</p>
+    </footer>
+    <!-- Script tag for main JavaScript file (module type) -->
+    <script type="module" src="../js_files/main.js"></script>
+    <script src="../js_files/hamburger.js"></script>
+    
+</body>
+</html>

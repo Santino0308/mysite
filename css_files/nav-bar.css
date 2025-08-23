@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap'); /* Imports Montserrat font */
+
+/* Base navigation styling */
+nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.275);
+    padding: 0 0;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Navigation list styling */
+nav ul {
+    flex: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Navigation list item styling */
+nav ul li {
+    margin: 0 20px;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Navigation link styling */
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: color 0.2s;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Underline effect for navigation links */
+nav ul li a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 4px;
+    height: 3px;
+    background: #f4b41a;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    z-index: 1;
+}
+
+/* Hover and focus state for navigation links */
+nav ul li a:hover, nav ul li a:focus {
+    background: none;
+    color: #23272b;
+}
+
+/* Show underline on hover/focus for navigation links */
+nav ul li a:hover::after, nav ul li a:focus::after {
+    transform: scaleX(1);
+}
+
+/* Navigation logo container styling */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+    margin-left: 12px;
+    height: 60px;
+}
+
+/* Navigation logo image styling */
+.nav-logo img {
+    height: 44px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Transition for navigation menu visibility */
+#navMenu {
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* Styling for home link in navigation (initially hidden) */
+.nav-home {
+    display: none;
+}
+
+/* Responsive: Show home link on smaller screens */
+@media (max-width: 700px) {
+    .nav-home {
+        display: block;
+    }
+}
+
+/* Responsive: Mobile navigation menu styling */
+/* Responsive: Mobile navigation styling */
+@media (max-width: 768px) {
+    nav {
+        padding: 0 10px;
+        flex-wrap: wrap;
+        min-height: 50px;
+    }
+    
+    nav ul {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        order: 2;
+        width: 100%;
+        padding: 8px 0;
+    }
+    
+    nav ul li {
+        margin: 2px 6px;
+    }
+    
+    nav ul li a {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+    }
+    
+    .nav-logo {
+        height: 50px;
+        margin: 0;
+        order: 1;
+        align-self: center;
+    }
+    
+    .nav-logo img {
+        height: 36px;
+        max-width: 120px;
+    }
+}
+
+/* Hamburger menu button styling */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    background: rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 20px;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+/* Hamburger menu lines styling (works with both span and div elements) */
+.hamburger span,
+.hamburger-line {
+    width: 80%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+    display: block;
+    margin: 2px auto;
+}
+
+/* Hamburger menu open state animations */
+.hamburger.active span:nth-child(1),
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger.active span:nth-child(3),
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 17.5px;
+        right: 20px;
+        z-index: 1100;
+    }
+    
+    /* Show hamburger lines in white when menu is open */
+    .hamburger.active span,
+    .hamburger.active .hamburger-line {
+        background-color: #fff;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 0 5px;
+    }
+    
+    nav ul {
+        padding: 5px 0;
+    }
+    
+    nav ul li {
+        margin: 1px 3px;
+    }
+    
+    nav ul li a {
+        font-size: 0.7rem;
+        padding: 4px 5px;
+        letter-spacing: 0.2px;
+    }
+    
+    .nav-logo img {
+        height: 32px;
+        max-width: 100px;
+    }
+    
+    /* Hide one of the duplicate Home links on very small screens */
+    .nav-home:last-child {
+        display: none;
+    }
+}
+
+@media (max-width: 360px) {
+    nav ul li a {
+        font-size: 0.65rem;
+        padding: 3px 4px;
+    }
+    
+    .nav-logo img {
+        height: 28px;
+        max-width: 90px;
+    }
+    
+    nav ul li {
+        margin: 1px 2px;
+    }
+}

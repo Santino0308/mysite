@@ -1,0 +1,150 @@
+<!-- filepath: c:\xampp\htdocs\Atrium_Interiors\html_files\contact.html -->
+<!-- Document type declaration -->
+<!DOCTYPE html>
+<!-- Root HTML element with language set to English -->
+<html lang="en">
+<!-- Head section containing metadata and links -->
+<head>
+    <!-- Character set declaration -->
+    <meta charset="UTF-8">
+    <!-- Viewport configuration for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../media_files/logo.png">
+    <!-- Document title -->
+    <title>Contact</title>
+    <!-- Link to the main stylesheet -->
+    <link rel="stylesheet" href="../css_files/main.css">
+    <!-- Link to the contact page specific stylesheet -->
+    <link rel="stylesheet" href="../css_files/contact.css">
+</head>
+<!-- Body of the HTML document -->
+<body>
+    <!-- Header section containing the navigation bar -->
+    <header>
+        <!-- Navigation bar -->
+        <nav>
+            <!-- Navigation menu list -->
+            <ul id="navMenu">
+                <!-- Navigation item: Home (visible on smaller screens) -->
+                <li class="nav-home"><a href="index.html">Home</a></li>
+                <!-- Navigation item: About Us -->
+                <li><a href="about-us.html">About Us</a></li>
+                <!-- Navigation item: Services -->
+                <li><a href="services.html">Services</a></li>
+                <!-- Navigation item: Portfolio/Projects -->
+                <li><a href="portfolio-projects.html">Portfolio/Projects</a></li>
+                <!-- Navigation item: Contact -->
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+            <!-- Navigation logo linked to homepage -->
+            <a href="index.html" class="nav-logo" aria-label="Home">
+                 <!-- Logo image -->
+                 <img src="../media_files/logo.png" alt="Atrium Interiors Logo">
+            </a>
+        </nav>
+    </header> 
+    
+    <!-- Main contact section -->
+    <section class="contact-section">
+        <!-- Container for the main heading of the contact section -->
+        <div class="contact-heading-container">
+            <!-- Main heading for the contact section -->
+            <h2>Contact Us</h2>
+        </div>
+        <!-- Container for contact information details -->
+        <div class="contact-info">
+            <!-- Paragraph for email addresses -->
+            <p><strong>Email:</strong> info@atriuminteriors.co / atrium.interiors316@gmail.com / atriumid.projects@gmail.com</p>
+            <!-- Paragraph for contact numbers -->
+            <p><strong>Contact No:</strong> 050 380 0064, 04 2248253</p> 
+            <p>Are you ready to work with <strong>us</strong>? please go ahead and contact the information up <strong>above</strong>and we will get back to you as soon as <strong>possible.</strong> Or you can also visit our offices located at</p>
+            <section class="location">
+            <!-- Heading for location -->
+            <h3>Our Location</h3>
+            <!-- Paragraph stating the location -->
+            <p>Umm Ramool, Dubai, United Arab Emirates</p>
+            <!-- Embedded Google Maps iframe for the company location -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.2291823343903!2d55.36229781063323!3d25.229204677597345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5dff625ce829%3A0xd7c4b56f0896f052!2sATRIUM%20Interior%20Design%20and%20Contracting%20LLC!5e0!3m2!1sen!2sae!4v1748377825226!5m2!1sen!2sae" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </section>
+
+     <footer class="footer">
+        <!-- Contact information -->
+        <div class="footer-contact">
+            <p><strong>Email:</strong> <a href="mailto:info@atriuminteriors.ae">info@atriuminteriors.ae</a></p>
+            <p><strong>Mobile:</strong> <a href="tel:+971501234567">+971 50 123 4567</a></p>
+        </div>
+        <!-- Social media links -->
+        <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=100087343688188" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">Facebook</a>
+            <a href="https://www.instagram.com/atriuminteriorsdxb" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">Instagram</a>
+        </div>
+        <!-- Copyright information -->
+        <p>&copy; 2023 Atrium Interiors. All rights reserved.</p>
+    </footer>
+
+    
+
+    
+    <!-- Script tag for main JavaScript file (module type) -->
+    <script type="module" src="../js_files/main.js"></script>
+    <!-- Script tag for contact form specific JavaScript file -->
+    <script src="../js_files/contact-handler.js" defer></script>
+    <!-- Inline script for dynamic submit button behavior -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const emailInput = document.getElementById('email');
+            const submitButton = document.querySelector('.contact-form button[type="submit"]');
+            const form = document.querySelector('.contact-form');
+
+            function resetButtonPosition() {
+                submitButton.style.position = ''; 
+                submitButton.style.left = '';
+                submitButton.style.top = '';
+            }
+
+            submitButton.addEventListener('mouseover', function() {
+                if (!emailInput.checkValidity()) {
+                    submitButton.style.position = 'absolute';
+                    
+                    const buttonWidth = submitButton.offsetWidth;
+                    const buttonHeight = submitButton.offsetHeight;
+                    
+                    const formWidth = form.clientWidth;
+                    const formHeight = form.clientHeight;
+
+                    let newLeft = 0;
+                    let newTop = 0;
+
+                    if (formWidth > buttonWidth) {
+                        newLeft = Math.random() * (formWidth - buttonWidth);
+                    }
+                    if (formHeight > buttonHeight) {
+                        newTop = Math.random() * (formHeight - buttonHeight);
+                    }
+                    
+                    submitButton.style.left = newLeft + 'px';
+                    submitButton.style.top = newTop + 'px';
+                } else {
+                    resetButtonPosition();
+                }
+            });
+
+            emailInput.addEventListener('input', function() {
+                if (emailInput.checkValidity()) {
+                    resetButtonPosition();
+                }
+            });
+
+            form.addEventListener('focusin', function() {
+                if (emailInput.checkValidity()) {
+                    resetButtonPosition();
+                }
+            });
+
+            resetButtonPosition();
+        });
+    </script>
+</body>
+</html>
