@@ -8,11 +8,11 @@
     <meta charset="UTF-8">
     <!-- Viewport configuration for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../media_files/logo.png">
+    <link rel="icon" type="image/png" href="media_files/logo.png">
     <!-- Document title -->
     <title>HomePage</title>
     <!-- Link to the main stylesheet -->
-    <link rel="stylesheet" href="../css_files/main.css">
+    <link rel="stylesheet" href="css_files/main.css">
 </head>
 <!-- Body of the HTML document -->
 <body>
@@ -20,6 +20,17 @@
     <header>
         <!-- Navigation bar -->
         <nav>
+            <!-- Navigation logo linked to homepage -->
+            <a href="index.html" class="nav-logo" aria-label="Home">
+                <!-- Logo image -->
+                <img src="media_files/logo.png" alt="Atrium Interiors Logo">
+            </a>
+            <!-- Hamburger menu toggle -->
+            <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <!-- Navigation menu list -->
             <ul id="navMenu">
                 <!-- Navigation item: Home (visible on smaller screens) -->
@@ -32,20 +43,14 @@
                 <li><a href="portfolio-projects.html">Portfolio/Projects</a></li>
                 <!-- Navigation item: Contact -->
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="index.html">Home</a></li>
             </ul>
-            <!-- Navigation logo linked to homepage -->
-            <a href="index.html" class="nav-logo" aria-label="Toggle navigation menu">
-                <!-- Logo image -->
-                <img src="../media_files/logo.png" alt="Atrium Interiors Logo">
-            </a>
         </nav>
     </header>
 
     <!-- Section for greeting video background -->
     <div class="greeting-video-section" style="position: relative; width: 100vw; height: 100vh; overflow: hidden;">
       <!-- Background video element -->
-      <video id="greetingBgVideo" class="greeting-bg-video" autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100vw; min-height: 100%; width: auto; height: 100%; transform: translate(-50%, -50%); object-fit: cover; z-index: 1; filter: brightness(0.7) saturate(1.1); background: #000;"><source src="../media_files/bgvid.mov" type="video/mp4">Your browser does not support the video tag.</video>
+    <video id="greetingBgVideo" class="greeting-bg-video" autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100vw; min-height: 100%; width: auto; height: 100%; transform: translate(-50%, -50%); object-fit: cover; z-index: 1; filter: brightness(0.7) saturate(1.1); background: #000;"><source src="media_files/bgvid.mov" type="video/mp4">Your browser does not support the video tag.</video>
       <!-- Container for centering content on top of the video -->
       <div class="center-container" style="position: relative; z-index: 2; height: 100%; display: flex; justify-content: center; align-items: center;">
         <!-- Welcome section with heading and greeting -->
@@ -64,7 +69,7 @@
         <div class="feature-box">
             <a href="about-us.html" class="feature-link">
                 <!-- Image for Our Story feature box -->
-                <img src="../media_files/Team.jpg" alt="Elegant interior design representing Our Story" class="feature-box-img">
+                <img src="media_files/Team.jpg" alt="Elegant interior design representing Our Story" class="feature-box-img">
                 <!-- Heading for Our Story feature box -->
                 <h3>Our Story</h3>
                 <!-- Paragraph for Our Story feature box -->
@@ -75,7 +80,7 @@
         <div class="feature-box">
             <a href="services.html" class="feature-link">
                 <!-- Image for Our Services feature box -->
-                <img src="../media_files/Service.png" alt="Blueprint and design tools representing Our Services" class="feature-box-img">
+                <img src="media_files/service.png" alt="Blueprint and design tools representing Our Services" class="feature-box-img">
                 <!-- Heading for Our Services feature box -->
                 <h3>Our Services</h3>
                 <!-- Paragraph for Our Services feature box -->
@@ -86,7 +91,7 @@
         <div class="feature-box">
             <a href="portfolio-projects.html" class="feature-link">
                 <!-- Image for View Our Work feature box -->
-                <img src="../media_files/villa1_2.JPG" alt="Collection of beautiful interior projects representing Our Work" class="feature-box-img">
+                <img src="media_files/villa1_2.JPG" alt="Collection of beautiful interior projects representing Our Work" class="feature-box-img">
                 <!-- Heading for View Our Work feature box -->
                 <h3>View Our Work</h3>
                 <!-- Paragraph for View Our Work feature box -->
@@ -100,7 +105,7 @@
         <!-- Message element with background image and hover content -->
         <h1 id="message2">
             <!-- Background image for the message -->
-            <img src="../media_files/bgs2.jpg" alt="Atrium Experience" class="message2-img">
+            <img src="media_files/bgs2.jpg" alt="Atrium Experience" class="message2-img">
             <!-- Content to be revealed on hover -->
             <span class="card__content">For over 15 years of professional experience our attention to details which transforms the concept to reality has the greatest expression of comfort, styles and elegance.</span>
         </h1>
@@ -111,7 +116,7 @@
         <!-- Container for the CEO's image -->
         <div class="ceo-image">
             <!-- CEO's image -->
-            <img src="../media_files/ceo.jpg" alt="CEO of Atrium Interiors">
+            <img src="media_files/ceo.jpg" alt="CEO of Atrium Interiors">
         </div>
         <!-- Divider element in the CEO section -->
         <div class="ceo-divider"></div>
@@ -132,8 +137,8 @@
     <footer class="footer">
         <!-- Contact information -->
         <div class="footer-contact">
-            <p><strong>Email:</strong> <a href="mailto:info@atriuminteriors.co">info@atriuminteriors.co</a></p>
-            <p><strong>Mobile:</strong> <a href="tel:+971501234567">+971 050 380 0064</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@atriuminteriors.ae">info@atriuminteriors.ae</a></p>
+            <p><strong>Mobile:</strong> <a href="tel:+971501234567">+971 50 123 4567</a></p>
         </div>
         <!-- Social media links -->
         <div class="footer-social">
@@ -144,12 +149,7 @@
         <p>&copy; 2023 Atrium Interiors. All rights reserved.</p>
     </footer>
     <!-- Script tag for main JavaScript file (module type) -->
-    <script type="module" src="../js_files/main.js"></script>
-    <script src="../js_files/hamburger.js"></script>
+    <script type="module" src="js_files/main.js"></script>
     
 </body>
-
 </html>
-
-
-
