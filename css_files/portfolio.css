@@ -1,153 +1,357 @@
-/* Main container for the gallery */
+/* =========================
+   Company Portfolio Gallery
+   ========================= */
+
+/* ---------- Design Tokens ---------- */
+:root {
+  --container-max: 1320px;
+  --surface: #ffffff;
+  --surface-2: #f6f8fb;
+  --text: #000000;           /* slate-900 */
+  --muted: #000000;          /* gray-500/600 */
+  --brand: #000000;          /* update to your brand */
+  --brand-ink: #000000;
+  --shadow-1: 0 2px 12px rgba(15, 23, 42, 0.06);
+  --shadow-2: 0 8px 30px rgba(15, 23, 42, 0.12);
+  --radius: 16px;
+  --radius-sm: 12px;
+
+  /* Fluid scales */
+  --g-gap: clamp(14px, 2.2vw, 28px);
+  --pad-section: clamp(16px, 4vw, 48px);
+  --pad-card: clamp(12px, 2.2vw, 18px);
+  --h1: clamp(28px, 4vw, 44px);
+  --h2: clamp(20px, 2.8vw, 28px);
+  --h3: clamp(18px, 2.2vw, 24px);
+  --body: clamp(14px, 1.6vw, 16px);
+  --caption: clamp(12px, 1.4vw, 14px);
+}
+
+/* Optional dark mode (remove if unwanted) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #0b1220;
+    --surface-2: #0f1629;
+    --text: #e6eefc;
+    --muted: #9aa8c7;
+    --shadow-1: 0 2px 10px rgba(0,0,0,0.4);
+    --shadow-2: 0 12px 36px rgba(0,0,0,0.5);
+  }
+}
+
+/* ---------- Base ---------- */
 .gallery {
   width: 100%;
-  max-width: 1320px;
-  margin: 0 auto 3rem auto;
-  padding: 2rem 1rem;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--pad-section) clamp(12px, 3vw, 24px);
   box-sizing: border-box;
+  background: transparent;
 }
 
-/* Universal box-sizing and font for gallery elements */
 .gallery * {
-  font-family: 'Montserrat', sans-serif; 
   box-sizing: border-box;
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* Styling for the main heading of the gallery */
+/* ---------- Typography ---------- */
 .gallery-heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #000000;
+  font-size: var(--h1);
+  font-weight: 800;
+  color: var(--text);
   text-align: center;
-  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.25em 0;
 }
 
-/* Styling for the subheading of the gallery */
 .gallery-subheading {
-  font-size: 1.1rem;
-  color: #888;
+  font-size: var(--body);
+  color: var(--muted);
   text-align: center;
-  margin-bottom: 2rem;
+  max-width: 60ch;
+  margin: 0 auto clamp(16px, 2vw, 24px);
 }
 
-/* Styling for a secondary subheading in the gallery */
-.gallery-subsub {
-  font-size: 2.5rem;
-  color: #000000;
-  text-align: center;
-  margin-top: 3.5rem;
-}
-
-/* Styling for a tertiary subheading, larger font size */
+.gallery-subsub,
 .gallery-subsub3 {
-  font-size: 3rem;
-  color: #000000;
+  color: var(--text);
   text-align: center;
-  margin-top: 4rem;
+  margin: clamp(28px, 6vw, 56px) 0 clamp(8px, 2vw, 12px);
 }
+.gallery-subsub  { font-size: var(--h2); font-weight: 700; }
+.gallery-subsub3 { font-size: var(--h1); font-weight: 800; }
 
-/* Grid layout for gallery items */
+/* ---------- Grid ---------- */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  gap: var(--g-gap);
+  /* Cards naturally flow to “nice” widths across devices */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(240px, 30vw, 360px), 1fr)
+  );
+  align-items: stretch;
 }
 
-/* Individual gallery item styling */
+/* ---------- Card ---------- */
 .gallery-item {
   position: relative;
-  overflow: hidden;
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transition: box-shadow 0.2s;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: clip; /* modern 'hidden' to clip with border-radius */
+  outline: none;
 }
 
-/* Hover effect for gallery items */
+/* If your item is a link, apply focus styles */
+.gallery-item:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 45%, transparent), var(--shadow-2);
+  transform: translateY(-2px);
+}
+
 .gallery-item:hover {
-  box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
 }
 
-/* Thumbnail image styling within a gallery item */
+/* ---------- Media (Thumb) ----------
+   Reserve space to prevent layout shift and keep images elegant.
+   Change aspect ratio if needed (e.g., 3/2 or 1/1 for squares). */
 .gallery-thumb {
   width: 100%;
-  height: 220px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
-  border-radius: 1rem 1rem 0 0;
-  transition: transform 0.3s;
+  transition: transform 0.35s ease;
 }
 
-/* Hover effect for gallery thumbnails */
 .gallery-item:hover .gallery-thumb {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
-/* Caption overlay for gallery items */
+/* Optional meta area under the image (title/location) — if you have one */
+.gallery-meta {
+  width: 100%;
+  padding: var(--pad-card);
+  display: grid;
+  gap: 6px;
+}
+
+.gallery-title {
+  font-size: var(--h3);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.gallery-location {
+  font-size: var(--caption);
+  color: var(--muted);
+}
+
+/* ---------- Overlay Caption (on hover) ---------- */
 .gallery-caption {
   position: absolute;
-  left: 0; right: 0; bottom: 0; top: 0;
-  background: rgba(40,40,40,0.55);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.4s;
-  pointer-events: none;
+  inset: 0;
+  display: grid;
+  place-items: center;
   text-align: center;
-  padding: 1rem;
+  padding: 20px;
+  color: #fff;
+  background:
+    linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.15) 40%, rgba(0,0,0,0));
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  pointer-events: none;
 }
 
-/* Show caption on gallery item hover */
 .gallery-item:hover .gallery-caption {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Styling for the title within the caption */
 .caption-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.3rem;
+  font-size: clamp(16px, 2.6vw, 20px);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+  margin: 0 0 6px;
 }
 
-/* Styling for the location text within the caption */
 .caption-location {
-  font-size: 1rem;
-  font-weight: 400;
-  opacity: 0.85;
+  font-size: clamp(13px, 2.2vw, 16px);
+  opacity: 0.95;
 }
 
-/* Responsive adjustments for gallery on medium screens */
-@media (max-width: 900px) {
-  .gallery {
-    padding: 1rem 0.5rem;
-  }
+/* ---------- Breakpoints ---------- */
+/* Tablets: tighten gaps a touch, maintain strong images */
+@media (max-width: 1024px) {
+  :root { --g-gap: clamp(14px, 2.5vw, 22px); }
+}
+
+/* Phones: single column hero cards by default */
+@media (max-width: 640px) {
   .gallery-grid {
-    gap: 1.2rem;
+    grid-template-columns: 1fr;
   }
-  .gallery-thumb {
-    height: 160px;
-  }
-}
-
-/* Responsive adjustments for gallery on small screens */
-@media (max-width: 600px) {
   .gallery {
-    padding: 0.5rem 0.2rem;
-  }
-  .gallery-heading {
-    font-size: 1.5rem;
+    padding: clamp(12px, 5vw, 20px);
   }
   .gallery-thumb {
-    height: 120px;
+    aspect-ratio: 3 / 2; /* a bit taller on mobile for visual punch */
   }
 }
 
+/* ---------- Lightbox (refined) ---------- */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.22s ease;
+}
 
+.lightbox-content {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 6vh 0;
+}
 
+.lightbox-img {
+  max-width: min(92vw, 1400px);
+  max-height: 86vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: var(--shadow-2);
+  animation: zoomIn 0.22s ease;
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: clamp(10px, 4vh, 40px);
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: var(--body);
+  max-width: min(90vw, 800px);
+}
+
+/* Controls */
+.close-lightbox,
+.nav-btn {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  width: clamp(40px, 6.5vw, 56px);
+  height: clamp(40px, 6.5vw, 56px);
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 1001;
+  outline: none;
+}
+
+.close-lightbox {
+  top: clamp(10px, 2.5vw, 22px);
+  right: clamp(12px, 2.5vw, 24px);
+  font-size: clamp(22px, 4vw, 32px);
+}
+
+.nav-btn {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(18px, 4.5vw, 28px);
+}
+
+.prev-btn { left: clamp(10px, 3vw, 28px); }
+.next-btn { right: clamp(10px, 3vw, 28px); }
+
+.close-lightbox:hover,
+.nav-btn:hover {
+  background: rgba(0,0,0,0.75);
+  transform: translateY(-50%) scale(1.05);
+}
+.close-lightbox:hover { transform: none; }
+
+/* Smaller phones: snugger layout */
+@media (max-width: 480px) {
+  .lightbox-img {
+    max-width: 94vw;
+    max-height: 78vh;
+  }
+  .lightbox-caption {
+    font-size: var(--caption);
+    padding: 8px 14px;
+  }
+}
+
+/* ---------- Motion / A11y ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes zoomIn {
+  from { transform: scale(0.96); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ===== Force all gallery text to black (across light/dark) ===== */
+:root {
+  --text: #000000;
+  --muted: #000000;
+  --brand: #000000;
+  --brand-ink: #000000;
+}
+
+/* Make the overlay caption readable with black text */
+.gallery-caption {
+  color: #000000; /* text is black now */
+  background:
+    linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.92),
+      rgba(255, 255, 255, 0.65) 40%,
+      rgba(255, 255, 255, 0.2)
+    );
+}
+
+/* Remove white-glow meant for light text */
+.caption-title {
+  text-shadow: none;
+}
+
+/* Optional: if you want captions slightly subtler */
+.caption-location {
+  opacity: 0.85; /* keep it readable but a touch softer */
+}
+
+/* (Optional) If you don’t want dark mode palette to flip colors,
+   neutralize the dark-mode variables while keeping black text. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #ffffff;
+    --surface-2: #f6f8fb;
+    --text: #000000;
+    --muted: #000000;
+  }
+}
